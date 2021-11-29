@@ -1,10 +1,10 @@
 from django.urls import path, include
-from .views import CourseViewSet
-# from courses.views import  *
+from .views import ProfileViewSet
+# from Profiles.views import  *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('courses-api', CourseViewSet)
+router.register('profiles-api', ProfileViewSet)
 
 
 urlpatterns = [
