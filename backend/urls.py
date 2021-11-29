@@ -10,6 +10,7 @@ urlpatterns = [
     path('classes/', include('classes.urls')),
     path('profiles/', include('profiles.urls')),
     path('timetables/', include('timetables.urls')),
-    
+    path('auth/', include('auth.urls')),
+
 
 ]

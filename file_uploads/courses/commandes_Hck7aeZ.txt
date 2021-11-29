@@ -1,0 +1,65 @@
+// clone repo 
+
+git clone <repo_url>
+
+
+// install requirements 
+
+pip install -r .\requirements.txt  
+
+
+// install python / django packages 
+
+pip install <package_name>
+
+
+// start django project
+
+django-admin startproject <project_name>
+
+
+// create admin (super user)
+
+python manage.py createsuperuser
+
+
+//start apps 
+
+python manage.py startapp <app_name>
+
+
+// migarations 
+
+python manage.py makemigrations 
+
+python manage.py migrate 
+
+
+// runserver 
+
+python manage.py runserver
+
+
+// create react app 
+
+npx create-react-app frontend
+
+
+
+
+///// github 
+
+git clone <url>
+
+git checkout -b <branch name> 
+
+
+// ajouter les fichier 
+
+git add .
+
+git commit -m "message descriptif"
+
+git push origin <esm el branch> 
+
+
