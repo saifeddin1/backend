@@ -12,7 +12,3 @@ class CourseViewSet(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
 
 
-def home(request):
-    courses = Course.objects.all()  # select * from courses
-
-    return render(request, 'index.html', {"courses": courses})

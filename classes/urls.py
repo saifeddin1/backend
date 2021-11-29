@@ -1,14 +1,14 @@
 from django.urls import path, include
-from .views import CourseViewSet
+from .views import ClasseViewSet
 # from courses.views import  *
 from rest_framework import routers
 
+
 router = routers.DefaultRouter()
-router.register('courses-api', CourseViewSet)
+router.register('classes-api', ClasseViewSet)
 
 
 urlpatterns = [
     path('', include(router.urls)),
-
 ]
     
