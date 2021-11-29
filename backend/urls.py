@@ -8,5 +8,6 @@ from courses.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('courses/', include('courses.urls')),
+    
 
 ]
