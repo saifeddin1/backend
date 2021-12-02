@@ -1,15 +1,34 @@
 from django.db import models
-
+from classes.models import Classe
 # Create your models here.
+
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class Profile(models.Model):
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    cin = models.IntegerField()
-    birthdate = models.DateField(auto_now=False, auto_now_add=False)
-    email = models.EmailField(max_length=254)
-
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=True)
+    first_name = models.CharField(max_length=200, blank=True, null=True)
+    last_name = models.CharField(max_length=200, blank=True, null=True)
+    cin = models.IntegerField(null=True, blank=True)
+    birthdate = models.DateField(
+        auto_now=False, auto_now_add=False, blank=True, null=True)
+    email = models.EmailField(max_length=254,  blank=True, null=True)
+    classe = models.ForeignKey(
+        Classe, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name
+        return self.user.username
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+
+# @receiver(post_save, sender=User)
+# def save_user_profile(sender, instance, **kwargs):
+#     instance.profile.save()

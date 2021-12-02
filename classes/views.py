@@ -10,3 +10,4 @@ from .serializers import ClasseSerializer
 class ClasseViewSet(viewsets.ModelViewSet):
     queryset = Classe.objects.all()
     serializer_class = ClasseSerializer
+    filter_fields = ('name',)
