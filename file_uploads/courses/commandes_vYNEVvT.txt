@@ -1,0 +1,89 @@
+// clone repo 
+
+git clone <repo_url>
+
+
+// install requirements 
+
+pip install -r .\requirements.txt  
+
+
+// install python / django packages 
+
+pip install <package_name>
+
+
+// start django project
+
+django-admin startproject <project_name>
+
+
+// create admin (super user)
+
+python manage.py createsuperuser
+
+
+//start apps 
+
+python manage.py startapp <app_name>
+
+
+// migarations 
+
+python manage.py makemigrations 
+
+python manage.py migrate 
+
+
+// runserver 
+
+python manage.py runserver
+
+
+ 
+
+
+
+///// github 
+
+git clone <url>
+
+// bch ta3ml branch jdid w tod5ol fi wosto 
+
+git checkout -b <branch name> 
+
+
+ 
+
+
+/// gbal ma tabda t modifi 
+
+1- od5ol lel branch mte3k :
+
+git checkout <esm el branch> 
+
+2- ekteb l command hedhi :
+
+git pull origin main 
+
+
+
+// ba3d ma t modifi 
+
+git add .
+
+git commit -m "message descriptif"
+
+git push origin <esm el branch>
+
+
+
+/////////// REACT
+
+///  tcloniw el repo mte3 el frontend, t3awed el mara7el mte3 el github li lfo9 
+
+// Mba3ed :
+
+npm install /// bch t instalilek les packages l mawjodin 
+
+npm start /// bch t5adem el app

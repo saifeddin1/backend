@@ -9,11 +9,13 @@ from django_filters import rest_framework as filters
 
 
 class ProfileFilter(filters.FilterSet):
-    first_name = filters.CharFilter(lookup_expr='icontains')
 
     class Meta:
         model = Profile
-        fields = ('first_name',)
+        fields = {
+            'first_name': ['icontains'],
+            'birthdate': ['iexact', 'lte', 'gte']
+        }
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
