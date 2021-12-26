@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from rest_framework.authtoken.views import obtain_auth_token  # <-- Here
 from django.contrib.auth.views import LoginView, LogoutView
 from .router import router
-
+from courses.views import DownloadCourse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,6 +14,8 @@ urlpatterns = [
     # path('profiles/', include('profiles.urls')),
     # path('timetables/', include('timetables.urls')),
     path('api/', include(router.urls)),
+    path('file_uploads/courses/<filename>',
+         DownloadCourse, name='download_course'),
 
     path('api-token-auth/', obtain_auth_token,
          name='api_token_auth'),  # <-- And here

@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import CourseViewSet
+from .views import CourseViewSet, DownloadCourse
 # from courses.views import  *
 from rest_framework import routers
 
@@ -11,4 +11,3 @@ urlpatterns = [
     path('', include(router.urls)),
 
 ]
-    

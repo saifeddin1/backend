@@ -11,6 +11,21 @@ from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
 from .serializers import CourseSerializer
 # orm
 import json
+from django.core.files import File
+from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from backend.settings import BASE_DIR, MEDIA_ROOT
+
+
+@api_view(['GET'])
+def DownloadCourse(request, filename):
+    path_to_file = MEDIA_ROOT + f'courses/{filename}'
+    print("\n", path_to_file)
+    f = open(path_to_file, 'rb')
+    pdfFile = File(f)
+    response = HttpResponse(pdfFile.read())
+    response['Content-Type'] = 'application/pdf'
+    return response
 
 
 class CourseViewSet(viewsets.ModelViewSet):
