@@ -4,7 +4,7 @@ from django.http import HttpResponse, request
 from rest_framework.response import Response
 # Create your views here.
 from .models import Course
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAdminUser
 
 from rest_framework import routers, serializers, viewsets, status
 from rest_framework.parsers import MultiPartParser, FormParser, FileUploadParser
@@ -30,7 +30,7 @@ def DownloadCourse(request, filename):
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
-    # permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAdminUser]
     parser_class = [MultiPartParser]
 
     serializer_class = CourseSerializer
