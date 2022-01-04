@@ -7,4 +7,4 @@ from .models import Classe
 class ClasseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Classe
-        fields = '__all__'
+        fields = ['id', 'name']

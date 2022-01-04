@@ -5,7 +5,10 @@ from .models import Profile
 
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+    username = serializers.ReadOnlyField(source='user.username')
+    profile_classe = serializers.ReadOnlyField(source='classe.name')
+
     class Meta:
         model = Profile
-        fields = ('first_name', 'last_name', 'cin',
-                  'birthdate', 'email', 'classe')
+        fields = ('id', 'first_name', 'last_name', 'cin',
+                  'birthdate', 'email', 'classe', 'role', 'username', 'profile_classe')

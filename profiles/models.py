@@ -18,6 +18,7 @@ class Profile(models.Model):
     email = models.EmailField(max_length=254,  blank=True, null=True)
     classe = models.ForeignKey(
         Classe, on_delete=models.CASCADE, null=True, blank=True)
+    role = models.CharField(null=True, blank=True, max_length=50)
 
     def __str__(self):
         return self.user.username
